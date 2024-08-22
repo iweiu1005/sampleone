@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Player</title>
+</head>
+<body>
+    <!-- آهنگ -->
+    <audio id="myAudio" controls>
+        <source src="https://uploadkon.ir/uploads/57dd22_24file-4617.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <p>
+        <!-- لینک‌ها برای پخش از ثانیه مشخص شده -->
+        <a href="#" onclick="playFrom('myAudio', 158); event.preventDefault();">پخش آهنگ از ثانیه ۱۰</a> | 
+    </p>
+
+    <script>
+        function playFrom(mediaId, seconds) {
+            var mediaElement = document.getElementById(mediaId);
+            if (mediaElement) {
+                mediaElement.currentTime = seconds;
+                mediaElement.play();
+            } else {
+                console.error('Element with id ' + mediaId + ' not found.');
+            }
+        }
+    </script>
+
+</body>
+</html>
